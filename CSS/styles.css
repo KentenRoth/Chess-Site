@@ -69,7 +69,7 @@ button {
 }
 
 .container {
-	max-width: 1000px;
+	width: 1000px;
 	margin: 0 auto;
 	padding: 0 1.6rem;
 }
@@ -127,9 +127,21 @@ button {
 }
 
 /********** Card **********/
+
+.cardBox {
+	text-align: center;
+	margin: auto;
+}
+
 .card {
 	background: rgb(92, 92, 92);
 	border: 1px solid black;
+	border-radius: 3px;
+	display: inline-block;
+	margin: 10px;
+	width: 400px;
+	padding: 10px;
+	text-align: left;
 }
 
 .whitePieces {
@@ -139,15 +151,22 @@ button {
 
 .blackPieces {
 	color: black;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .won {
 	color: rgb(0, 207, 0);
-	font-weight: bold;
+	font-weight: 600;
+	padding-left: 10px;
+}
+
+.wonBy {
+	color: red;
+	padding-left: 10px;
 }
 
 .lost {
-	color: rgb(192, 0, 0);
-	font-weight: bold;
+	color: red;
+	font-weight: 600;
+	padding-left: 10px;
 }
