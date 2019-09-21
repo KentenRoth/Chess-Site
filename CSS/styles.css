@@ -125,3 +125,29 @@ button {
 	margin-top: 8px;
 	margin-left: 20px;
 }
+
+/********** Card **********/
+.card {
+	background: rgb(92, 92, 92);
+	border: 1px solid black;
+}
+
+.whitePieces {
+	color: rgb(226, 226, 226);
+	font-weight: 500;
+}
+
+.blackPieces {
+	color: black;
+	font-weight: bold;
+}
+
+.won {
+	color: rgb(0, 207, 0);
+	font-weight: bold;
+}
+
+.lost {
+	color: rgb(192, 0, 0);
+	font-weight: bold;
+}
