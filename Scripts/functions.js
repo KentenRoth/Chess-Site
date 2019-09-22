@@ -34,102 +34,90 @@ request.onload = function() {
 		const card = document.createElement('div');
 		card.setAttribute('class', 'card');
 
-		// const outcome = document.createElement('span');
+		const whiteRow = document.createElement('div');
+		whiteRow.setAttribute('class', 'row');
 
-		const wonBy = document.createElement('span');
-		wonBy.setAttribute('class', 'wonBy');
+		const whiteWonBy = document.createElement('div');
+		whiteWonBy.setAttribute('class', 'wonBy col-4');
 
-		const whitePieces = document.createElement('span');
-		whitePieces.setAttribute('class', 'whitePieces');
-		const whiteOutcome = document.createElement('span');
+		const whitePieces = document.createElement('div');
+		whitePieces.setAttribute('class', 'whitePieces col-4');
+		const whiteOutcome = document.createElement('div');
 		if (game.white.username === 'king_k2') {
 			if (didIWin === true) {
-				whiteOutcome.setAttribute('class', 'won');
+				whiteOutcome.setAttribute('class', 'won col-4');
 				whiteOutcome.textContent = 'Won';
-				wonBy.textContent = wonHow;
+				whiteWonBy.textContent = wonHow;
 				whitePieces.textContent = 'King_K2';
-				whitePieces.appendChild(whiteOutcome);
-				whiteOutcome.appendChild(wonBy);
 			} else {
-				whiteOutcome.setAttribute('class', 'lost');
+				whiteOutcome.setAttribute('class', 'lost col-4');
 				whitePieces.textContent = 'King_K2';
 				whiteOutcome.textContent = 'Lost';
-				whitePieces.appendChild(whiteOutcome);
 			}
 		} else {
 			if (didIWin === false) {
-				whiteOutcome.setAttribute('class', 'won');
+				whiteOutcome.setAttribute('class', 'won col-4');
 				whiteOutcome.textContent = 'Won';
+				whiteWonBy.textContent = wonHow;
 				whitePieces.textContent = 'Opponent';
-				wonBy.textContent = wonHow;
-				whitePieces.appendChild(whiteOutcome);
-				whiteOutcome.appendChild(wonBy);
+				whiteOutcome.appendChild(whiteWonBy);
 			} else {
-				whiteOutcome.setAttribute('class', 'lost');
+				whiteOutcome.setAttribute('class', 'lost col-4');
 				whiteOutcome.textContent = 'Lost';
 				whitePieces.textContent = 'Opponent';
 
 				whitePieces.appendChild(whiteOutcome);
 			}
 		}
+		const blackRow = document.createElement('div');
+		blackRow.setAttribute('class', 'row');
 
-		const blackPieces = document.createElement('span');
-		blackPieces.setAttribute('class', 'blackPieces');
-		const blackOutcome = document.createElement('span');
+		const blackWonBy = document.createElement('div');
+		blackWonBy.setAttribute('class', 'wonBy col-4');
 
+		const blackPieces = document.createElement('div');
+		blackPieces.setAttribute('class', 'blackPieces col-4');
+		const blackOutcome = document.createElement('div');
 		if (game.black.username === 'king_k2') {
 			if (didIWin === true) {
-				blackOutcome.setAttribute('class', 'won');
+				blackOutcome.setAttribute('class', 'won col-4');
 				blackOutcome.textContent = 'Won';
-				wonBy.textContent = wonHow;
+				blackWonBy.textContent = wonHow;
 				blackPieces.textContent = 'King_K2';
-				blackPieces.appendChild(blackOutcome);
-				blackOutcome.appendChild(wonBy);
 			} else {
-				blackOutcome.setAttribute('class', 'lost');
+				blackOutcome.setAttribute('class', 'lost col-4');
 				blackOutcome.textContent = 'Lost';
 				blackPieces.textContent = 'King_K2';
 				blackPieces.appendChild(blackOutcome);
 			}
 		} else {
 			if (didIWin === false) {
-				blackOutcome.setAttribute('class', 'won');
+				blackOutcome.setAttribute('class', 'won col-4');
 				blackOutcome.textContent = 'Won';
-				wonBy.textContent = wonHow;
+				blackWonBy.textContent = wonHow;
 				blackPieces.textContent = 'Opponent';
-				blackPieces.appendChild(blackOutcome);
-				blackOutcome.appendChild(wonBy);
+				blackOutcome.appendChild(blackWonBy);
 			} else {
-				blackOutcome.setAttribute('class', 'lost');
+				blackOutcome.setAttribute('class', 'lost col-4');
 				blackOutcome.textContent = 'Lost';
 				blackPieces.textContent = 'Opponent';
-				blackPieces.appendChild(blackOutcome);
+				blackPieces.appendChild(blackWonBy);
 			}
 		}
-
-		// if (didIWin === true) {
-		// 	outcome.textContent = 'Won';
-		// 	wonBy.textContent = wonHow;
-		// 	outcome.appendChild(wonBy);
-		// } else {
-		// 	outcome.setAttribute('class', 'lost');
-		// 	outcome.textContent = 'Lost';
-		// 	wonBy.setAttribute('class', 'wonBy');
-		// 	wonBy.textContent = wonHow;
-		// 	outcome.appendChild(wonBy);
-		// }
-
-		// const winBy = document.createElement('span');
-		// winBy.setAttribute('class', 'winBy');
-		// winBy.textContent = wonHow;
 
 		const br = document.createElement('br');
 
 		container.appendChild(cardBox);
 		cardBox.appendChild(card);
-		card.appendChild(whitePieces);
+		card.appendChild(whiteRow);
+		whiteRow.appendChild(whitePieces);
+		whiteRow.appendChild(whiteOutcome);
+		whiteRow.appendChild(whiteWonBy);
 		card.appendChild(br);
-		card.appendChild(blackPieces);
+		card.appendChild(blackRow);
+		blackRow.appendChild(blackPieces);
+		blackRow.appendChild(blackOutcome);
+		blackRow.appendChild(blackWonBy);
 		counter++;
 	});
 };

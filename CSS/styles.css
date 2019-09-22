@@ -133,6 +133,11 @@ button {
 	margin: auto;
 }
 
+.col-4 {
+	margin: auto;
+	text-align: center;
+}
+
 .card {
 	background: rgb(92, 92, 92);
 	border: 1px solid black;
@@ -146,7 +151,7 @@ button {
 
 .whitePieces {
 	color: rgb(226, 226, 226);
-	font-weight: 500;
+	font-weight: bold;
 }
 
 .blackPieces {
@@ -156,17 +161,19 @@ button {
 
 .won {
 	color: rgb(0, 207, 0);
-	font-weight: 600;
+	font-weight: bold;
 	padding-left: 10px;
 }
 
 .wonBy {
 	color: red;
+	font-weight: bold;
 	padding-left: 10px;
+	text-align: center;
 }
 
 .lost {
 	color: red;
-	font-weight: 600;
+	font-weight: bold;
 	padding-left: 10px;
 }
