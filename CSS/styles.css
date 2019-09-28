@@ -126,6 +126,31 @@ button {
 	margin-left: 20px;
 }
 
+/********** Header **********/
+.header {
+	background-image: url(../Images/chessHeader.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 600px;
+	width: 100%;
+}
+
+.headerBox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.titleBox {
+	background: rgba(0, 0, 0, 0.6);
+	padding: 20px 20px;
+}
+
+.title {
+	color: rgb(228, 228, 228);
+}
+
 /********** Card **********/
 
 .cardBox {
