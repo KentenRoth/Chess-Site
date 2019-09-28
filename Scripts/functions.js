@@ -49,7 +49,6 @@ request.onload = function() {
 			if (didIWin === true) {
 				whiteOutcome.setAttribute('class', 'won col-4');
 				whiteOutcome.textContent = 'Won';
-				// whiteWonBy.textContent = wonHow;
 				whitePieces.textContent = 'King_K2';
 			} else {
 				whiteOutcome.setAttribute('class', 'lost col-4');
@@ -61,7 +60,6 @@ request.onload = function() {
 			if (didIWin === false) {
 				whiteOutcome.setAttribute('class', 'won col-4');
 				whiteOutcome.textContent = 'Won';
-				// whiteWonBy.textContent = wonHow;
 				whitePieces.textContent = 'Opponent';
 				whiteOutcome.appendChild(whiteWonBy);
 			} else {
@@ -86,7 +84,6 @@ request.onload = function() {
 			if (didIWin === true) {
 				blackOutcome.setAttribute('class', 'won col-4');
 				blackOutcome.textContent = 'Won';
-				// blackWonBy.textContent = wonHow;
 				blackPieces.textContent = 'King_K2';
 			} else {
 				blackOutcome.setAttribute('class', 'lost col-4');
@@ -99,7 +96,6 @@ request.onload = function() {
 			if (didIWin === false) {
 				blackOutcome.setAttribute('class', 'won col-4');
 				blackOutcome.textContent = 'Won';
-				// blackWonBy.textContent = wonHow;
 				blackPieces.textContent = 'Opponent';
 				blackOutcome.appendChild(blackWonBy);
 			} else {
