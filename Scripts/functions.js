@@ -1,3 +1,5 @@
+// ********** Chess Card ********** \\
+
 const played = document.getElementById('played');
 
 const container = document.createElement('div');
@@ -19,7 +21,7 @@ request.onload = function() {
 	var data = JSON.parse(this.response);
 	var counter = 0;
 
-	data.games.some(game => {
+	data.games.reverse().some(game => {
 		if (counter >= 12) {
 			return true;
 		}
@@ -47,23 +49,25 @@ request.onload = function() {
 			if (didIWin === true) {
 				whiteOutcome.setAttribute('class', 'won col-4');
 				whiteOutcome.textContent = 'Won';
-				whiteWonBy.textContent = wonHow;
+				// whiteWonBy.textContent = wonHow;
 				whitePieces.textContent = 'King_K2';
 			} else {
 				whiteOutcome.setAttribute('class', 'lost col-4');
 				whitePieces.textContent = 'King_K2';
+				whiteWonBy.textContent = wonHow;
 				whiteOutcome.textContent = 'Lost';
 			}
 		} else {
 			if (didIWin === false) {
 				whiteOutcome.setAttribute('class', 'won col-4');
 				whiteOutcome.textContent = 'Won';
-				whiteWonBy.textContent = wonHow;
+				// whiteWonBy.textContent = wonHow;
 				whitePieces.textContent = 'Opponent';
 				whiteOutcome.appendChild(whiteWonBy);
 			} else {
 				whiteOutcome.setAttribute('class', 'lost col-4');
 				whiteOutcome.textContent = 'Lost';
+				whiteWonBy.textContent = wonHow;
 				whitePieces.textContent = 'Opponent';
 
 				whitePieces.appendChild(whiteOutcome);
@@ -82,11 +86,12 @@ request.onload = function() {
 			if (didIWin === true) {
 				blackOutcome.setAttribute('class', 'won col-4');
 				blackOutcome.textContent = 'Won';
-				blackWonBy.textContent = wonHow;
+				// blackWonBy.textContent = wonHow;
 				blackPieces.textContent = 'King_K2';
 			} else {
 				blackOutcome.setAttribute('class', 'lost col-4');
 				blackOutcome.textContent = 'Lost';
+				blackWonBy.textContent = wonHow;
 				blackPieces.textContent = 'King_K2';
 				blackPieces.appendChild(blackOutcome);
 			}
@@ -94,12 +99,13 @@ request.onload = function() {
 			if (didIWin === false) {
 				blackOutcome.setAttribute('class', 'won col-4');
 				blackOutcome.textContent = 'Won';
-				blackWonBy.textContent = wonHow;
+				// blackWonBy.textContent = wonHow;
 				blackPieces.textContent = 'Opponent';
 				blackOutcome.appendChild(blackWonBy);
 			} else {
 				blackOutcome.setAttribute('class', 'lost col-4');
 				blackOutcome.textContent = 'Lost';
+				blackWonBy.textContent = wonHow;
 				blackPieces.textContent = 'Opponent';
 				blackPieces.appendChild(blackWonBy);
 			}
@@ -123,6 +129,8 @@ request.onload = function() {
 };
 request.send();
 
+// ********** Chess Ratings and Record ********** \\
+
 var request = new XMLHttpRequest();
 request.open('GET', 'https://api.chess.com/pub/player/king_k2/stats', true);
 
@@ -138,6 +146,7 @@ request.onload = function() {
 request.send();
 
 // ********** NavBar Toggle **********\
+
 let mainNav = document.getElementById('js-menu');
 let navBarToggle = document.getElementById('js-navbar-toggle');
 navBarToggle.addEventListener('click', function() {
