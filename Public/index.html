@@ -23,11 +23,11 @@
 			<a class="home" href="#home">Home</a>
 			<ul class="nav" id="js-menu">
 				<li class="link"><a href="#goals">Goals</a></li>
-				<li class="link"><a href="#games">Games</a></li>
+				<li class="link"><a href="#play">Games</a></li>
 			</ul>
 		</div>
 		<div class="content">
-			<div class="header">
+			<div class="header" id="home">
 				<div class="headerBox">
 					<div class="titleBox">
 						<h1 class="title">My Chess Progress</h1>
@@ -36,7 +36,7 @@
 			</div>
 			<div class="container">
 				<div class="goals">
-					<div>
+					<div class="head">
 						<h2>Thoughts</h2>
 						<div>
 							<p>
@@ -62,9 +62,9 @@
 							</p>
 						</div>
 					</div>
-					<div>
+					<div class="head" id="goals">
 						<h2>Goals</h2>
-						<p>(in no specific order)</p>
+						<p class="subheader">(in no specific order)</p>
 						<ul>
 							<li>More blitz wins than losses</li>
 							<li>Blitz rating over 700</li>
@@ -81,13 +81,17 @@
 						</ul>
 					</div>
 				</div>
-				<div class="palyed" id="played">
-					<div>
-						<h2>Current Stats</h2>
-						<div class="stats" id="stats"></div>
-					</div>
-					<div>
-						<h2>Last 10 Games</h2>
+			</div>
+			<div class="play" id="play">
+				<div class="container">
+					<div class="played" id="played">
+						<div class="currentStats">
+							<h2>Current Stats</h2>
+							<div class="stats" id="stats"></div>
+						</div>
+						<div>
+							<h2>Last 10 Games</h2>
+						</div>
 					</div>
 				</div>
 			</div>

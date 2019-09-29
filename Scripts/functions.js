@@ -127,6 +127,8 @@ request.send();
 
 // ********** Chess Ratings and Record ********** \\
 
+const stats = document.getElementById('stats');
+
 var request = new XMLHttpRequest();
 request.open('GET', 'https://api.chess.com/pub/player/king_k2/stats', true);
 
@@ -138,6 +140,9 @@ request.onload = function() {
 	const blitzRating = blitz.last.rating;
 	const dailyRecord = daily.record;
 	const dailyRating = daily.last.rating;
+
+	console.log(blitzRecord, blitzRating);
+	console.log(dailyRecord, dailyRating);
 };
 request.send();
 

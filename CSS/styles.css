@@ -151,7 +151,34 @@ button {
 	color: rgb(228, 228, 228);
 }
 
-/********** Thoughts/Goals **********\
+/********** Thoughts/Goals **********/
+
+.head {
+	padding: 10px;
+}
+
+.goals {
+	text-align: center;
+	padding: 10px;
+}
+
+.subheader {
+	font-size: 1.3rem;
+	padding-bottom: 5px;
+}
+
+.goals ul {
+	list-style-type: none;
+}
+
+/********** Stats/Played **********/
+
+.play {
+	background: black;
+	color: rgb(228, 228, 228);
+	text-align: center;
+	padding: 10px;
+}
 
 /********** Card **********/
 
