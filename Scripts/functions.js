@@ -127,7 +127,20 @@ request.send();
 
 // ********** Chess Ratings and Record ********** \\
 
-const stats = document.getElementById('stats');
+const blitzRecord = document.getElementById('blitzRecord');
+const dailyRecord = document.getElementById('dailyRecord');
+
+const blitzContainer = document.createElement('div');
+blitzContainer.setAttribute('class', 'blitzContainer');
+
+const dailyContainer = document.createElement('div');
+dailyContainer.setAttribute('class', 'dailyContainer');
+
+const blitzStats = document.createElement('div');
+blitzStats.setAttribute('class', 'blitzStats');
+
+const dailyStats = document.createElement('div');
+dailyStats.setAttribute('class', 'dailyStats');
 
 var request = new XMLHttpRequest();
 request.open('GET', 'https://api.chess.com/pub/player/king_k2/stats', true);
@@ -136,13 +149,23 @@ request.onload = function() {
 	var data = JSON.parse(this.response);
 	const blitz = data.chess_blitz;
 	const daily = data.chess_daily;
-	const blitzRecord = blitz.record;
+	const blitzWins = blitz.record.win;
+	const blitzLoss = blitz.record.loss;
 	const blitzRating = blitz.last.rating;
-	const dailyRecord = daily.record;
+	const dailyWins = daily.record.win;
+	const dailyLoss = daily.record.loss;
 	const dailyRating = daily.last.rating;
 
-	console.log(blitzRecord, blitzRating);
-	console.log(dailyRecord, dailyRating);
+	blitzStats.textContent =
+		'Won: ' + blitzWins + ' Lost: ' + blitzLoss + ' Rating: ' + blitzRating;
+
+	dailyStats.textContent =
+		'Won: ' + dailyWins + ' Lost: ' + dailyLoss + ' Rating: ' + dailyRating;
+
+	blitzRecord.appendChild(blitzContainer);
+	blitzContainer.appendChild(blitzStats);
+	dailyRecord.appendChild(dailyContainer);
+	dailyContainer.appendChild(dailyStats);
 };
 request.send();
 

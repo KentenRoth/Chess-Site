@@ -180,6 +180,15 @@ button {
 	padding: 10px;
 }
 
+.blitzContainer,
+.dailyContainer {
+	text-align: center;
+}
+
+.stats {
+	padding: 10px;
+}
+
 /********** Card **********/
 
 .cardBox {
