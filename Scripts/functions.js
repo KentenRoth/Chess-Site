@@ -11,10 +11,15 @@ cardBox.setAttribute('class', 'cardBox');
 played.appendChild(container);
 
 var request = new XMLHttpRequest();
+
+const dateObj = new Date();
+const month = dateObj.getUTCMonth() + 1;
+const year = dateObj.getUTCFullYear();
+
 request.open('GET', 'https://api.chess.com/pub/player/king_k2/stats', true);
 request.open(
 	'GET',
-	'https://api.chess.com/pub/player/king_k2/games/2019/09',
+	`https://api.chess.com/pub/player/king_k2/games/${year}/${month}`,
 	true
 );
 request.onload = function() {
